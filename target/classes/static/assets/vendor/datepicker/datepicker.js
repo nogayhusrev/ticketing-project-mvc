@@ -1,4 +1,4 @@
-jQuery(document).ready(function($) {
+jQuery(document).ready(function ($) {
     'use strict';
 
     if ($("#datetimepicker1").length) {
@@ -58,7 +58,7 @@ jQuery(document).ready(function($) {
     }
 
     if ($("#datetimepicker7").length) {
-        $(function() {
+        $(function () {
             $('#datetimepicker7').datetimepicker({
                 icons: {
                     time: "far fa-clock",
@@ -76,15 +76,14 @@ jQuery(document).ready(function($) {
                     down: "fa fa-arrow-down"
                 }
             });
-            $("#datetimepicker7").on("change.datetimepicker", function(e) {
+            $("#datetimepicker7").on("change.datetimepicker", function (e) {
                 $('#datetimepicker8').datetimepicker('minDate', e.date);
             });
-            $("#datetimepicker8").on("change.datetimepicker", function(e) {
+            $("#datetimepicker8").on("change.datetimepicker", function (e) {
                 $('#datetimepicker7').datetimepicker('maxDate', e.date);
             });
         });
     }
-
 
 
     if ($("#datetimepicker10").length) {
@@ -106,11 +105,11 @@ jQuery(document).ready(function($) {
         });
     }
 
-if ($("#datetimepicker13").length) {
-     $('#datetimepicker13').datetimepicker({
+    if ($("#datetimepicker13").length) {
+        $('#datetimepicker13').datetimepicker({
             inline: true,
             sideBySide: true
         });
 
-}
+    }
 });

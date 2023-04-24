@@ -1,6 +1,6 @@
-(function(window, document, $, undefined) {
+(function (window, document, $, undefined) {
     "use strict";
-    $(function() {
+    $(function () {
 
         if ($('.ct-chart-line').length) {
             new Chartist.Line('.ct-chart-line', {
@@ -15,9 +15,7 @@
                 chartPadding: {
                     right: 40
                 },
-                axisY: {
-                    
-                }
+                axisY: {}
             });
 
         }
@@ -30,7 +28,10 @@
                     [5, 5, 10, 8, 7, 5, 4, null, null, null, 10, 10, 7, 8, 6, 9],
                     [10, 15, null, 12, null, 10, 12, 15, null, null, 12, null, 14, null, null, null],
                     [null, null, null, null, 3, 4, 1, 3, 4, 6, 7, 9, 5, null, null, null],
-                    [{ x: 3, y: 3 }, { x: 4, y: 3 }, { x: 5, y: undefined }, { x: 6, y: 4 }, { x: 7, y: null }, { x: 8, y: 4 }, { x: 9, y: 4 }]
+                    [{x: 3, y: 3}, {x: 4, y: 3}, {x: 5, y: undefined}, {x: 6, y: 4}, {x: 7, y: null}, {
+                        x: 8,
+                        y: 4
+                    }, {x: 9, y: 4}]
                 ]
 
             }, {
@@ -40,9 +41,7 @@
                 chartPadding: {
                     right: 10
                 },
-                axisY: {
-                  
-                },
+                axisY: {},
 
                 low: 0
 
@@ -66,7 +65,7 @@
                 axisY: {
                     onlyInteger: true,
                     offset: 20,
-                    
+
                 },
 
             });
@@ -74,31 +73,33 @@
 
 
         if ($('.ct-chart-scatter').length) {
-            var times = function(n) {
+            var times = function (n) {
                 return Array.apply(null, new Array(n));
             };
 
-            var data = times(52).map(Math.random).reduce(function(data, rnd, index) {
+            var data = times(52).map(Math.random).reduce(function (data, rnd, index) {
                 data.labels.push(index + 1);
-                data.series.forEach(function(series) {
+                data.series.forEach(function (series) {
                     series.push(Math.random() * 100)
                 });
 
                 return data;
             }, {
                 labels: [],
-                series: times(4).map(function() { return new Array() })
+                series: times(4).map(function () {
+                    return new Array()
+                })
             });
 
             var options = {
                 showLine: false,
                 axisX: {
-                    labelInterpolationFnc: function(value, index) {
+                    labelInterpolationFnc: function (value, index) {
                         return index % 13 === 0 ? 'W' + value : null;
                     }
                 },
                 axisY: {
-                    labelInterpolationFnc: function(value) {
+                    labelInterpolationFnc: function (value) {
                         return '$' + (value / 1000);
                     }
                 }
@@ -108,7 +109,7 @@
             var responsiveOptions = [
                 ['screen and (min-width: 640px)', {
                     axisX: {
-                        labelInterpolationFnc: function(value, index) {
+                        labelInterpolationFnc: function (value, index) {
                             return index % 4 === 0 ? 'W' + value : null;
                         }
                     }
@@ -132,7 +133,7 @@
                 {
                     low: 0,
                     showArea: true,
-                    
+
                 });
         }
 
@@ -157,7 +158,7 @@
                     showLabel: false,
                     showGrid: false
                 },
-               
+
             });
         }
 
@@ -171,10 +172,8 @@
                 ]
             }, {
                 stackBars: true,
-                axisY: {
-                    
-                }
-            }).on('draw', function(data) {
+                axisY: {}
+            }).on('draw', function (data) {
                 if (data.type === 'bar') {
                     data.element.attr({
                         style: 'stroke-width: 30px'
@@ -198,7 +197,7 @@
                 },
                 axisY: {
                     offset: 80,
-                    labelInterpolationFnc: function(value) {
+                    labelInterpolationFnc: function (value) {
                         return value + ' CHF'
                     },
                     scaleMinSpace: 15
@@ -218,13 +217,11 @@
                 high: 10,
                 low: -10,
                 axisX: {
-                    labelInterpolationFnc: function(value, index) {
+                    labelInterpolationFnc: function (value, index) {
                         return index % 2 === 0 ? value : null;
                     }
                 },
-                axisY: {
-                    
-                }
+                axisY: {}
             };
 
             new Chartist.Bar('.ct-chart-bipolar', data, options);
@@ -241,17 +238,15 @@
                 high: 10,
                 low: -10,
                 axisX: {
-                    labelInterpolationFnc: function(value, index) {
+                    labelInterpolationFnc: function (value, index) {
                         return index % 2 === 0 ? value : null;
                     }
                 },
-                axisY: {
-                    
-                }
+                axisY: {}
             });
 
             // Listen for draw events on the bar chart
-            chart.on('draw', function(data) {
+            chart.on('draw', function (data) {
                 // If this draw event is of type bar we can use the data to create additional content
                 if (data.type === 'bar') {
                     // We use the group element of the current series to append a simple circle with the bar peek coordinates and a circle radius that is depending on the value
@@ -269,10 +264,12 @@
                 series: [5, 3, 4]
             };
 
-            var sum = function(a, b) { return a + b };
+            var sum = function (a, b) {
+                return a + b
+            };
 
             new Chartist.Pie('.ct-chart-pie', data, {
-                labelInterpolationFnc: function(value) {
+                labelInterpolationFnc: function (value) {
                     return Math.round(value / data.series.reduce(sum) * 100) + '%';
                 }
             });
@@ -304,10 +301,9 @@
                     showLabel: false
 
 
-
                 });
 
-            chart.on('draw', function(data) {
+            chart.on('draw', function (data) {
                 if (data.type === 'slice') {
                     // Get the total path length in order to use for dash array animation
                     var pathLength = data.element._node.getTotalLength();
@@ -347,7 +343,7 @@
             });
 
             // For the sake of the example we update the chart every time it's created with a delay of 8 seconds
-            chart.on('created', function() {
+            chart.on('created', function () {
                 if (window.__anim21278907124) {
                     clearTimeout(window.__anim21278907124);
                     window.__anim21278907124 = null;
@@ -376,12 +372,12 @@
                 durations = 500;
 
             // Once the chart is fully created we reset the sequence
-            chart.on('created', function() {
+            chart.on('created', function () {
                 seq = 0;
             });
 
             // On each drawn element by Chartist we use the Chartist.Svg API to trigger SMIL animations
-            chart.on('draw', function(data) {
+            chart.on('draw', function (data) {
                 seq++;
 
                 if (data.type === 'line') {
@@ -477,14 +473,13 @@
             });
 
             // For the sake of the example we update the chart every time it's created with a delay of 10 seconds
-            chart.on('created', function() {
+            chart.on('created', function () {
                 if (window.__exampleAnimateTimeout) {
                     clearTimeout(window.__exampleAnimateTimeout);
                     window.__exampleAnimateTimeout = null;
                 }
                 window.__exampleAnimateTimeout = setTimeout(chart.update.bind(chart), 12000);
             });
-
 
 
         }
@@ -506,11 +501,6 @@
             });
 
         }
-
-
-
-
-
 
 
     });

@@ -1,6 +1,6 @@
-(function(window, document, $, undefined) {
+(function (window, document, $, undefined) {
     "use strict";
-    $(function() {
+    $(function () {
 
         if ($('#c3chart_area').length) {
             var chart = c3.generate({
@@ -27,8 +27,6 @@
                         show: true
 
 
-
-
                     },
                     x: {
                         show: true
@@ -49,7 +47,7 @@
                     ],
                     type: 'spline',
                     colors: {
-                         data1: '#5969ff',
+                        data1: '#5969ff',
                         data2: '#ff407b',
 
                     }
@@ -131,7 +129,7 @@
                     }
                 }
             });
-            setTimeout(function() {
+            setTimeout(function () {
                 chart.load({
                     xs: {
                         virginica: 'virginica_x'
@@ -142,12 +140,12 @@
                     ]
                 });
             }, 1000);
-            setTimeout(function() {
+            setTimeout(function () {
                 chart.unload({
                     ids: 'setosa'
                 });
             }, 2000);
-            setTimeout(function() {
+            setTimeout(function () {
                 chart.load({
                     columns: [
                         ["virginica", 0.2, 0.2, 0.2, 0.2, 0.2, 0.4, 0.3, 0.2, 0.2, 0.1, 0.2, 0.2, 0.1, 0.1, 0.2, 0.4, 0.4, 0.3, 0.3, 0.3, 0.2, 0.4, 0.2, 0.5, 0.2, 0.2, 0.4, 0.2, 0.2, 0.2, 0.2, 0.4, 0.1, 0.2, 0.2, 0.2, 0.2, 0.1, 0.2, 0.2, 0.3, 0.3, 0.2, 0.6, 0.4, 0.3, 0.2, 0.2, 0.2, 0.2],
@@ -194,25 +192,25 @@
                 },
                 grid: {
                     y: {
-                        lines: [{ value: 0 }]
+                        lines: [{value: 0}]
                     }
                 }
             });
-            setTimeout(function() {
+            setTimeout(function () {
                 chart.load({
                     columns: [
                         ['data4', 1200, 1300, 1450, 1600, 1520, 1820],
                     ]
                 });
             }, 1000);
-            setTimeout(function() {
+            setTimeout(function () {
                 chart.load({
                     columns: [
                         ['data5', 200, 300, 450, 600, 520, 820],
                     ]
                 });
             }, 2000);
-            setTimeout(function() {
+            setTimeout(function () {
                 chart.groups([
                     ['data1', 'data2', 'data3', 'data4', 'data5']
                 ])
@@ -278,7 +276,7 @@
                     type: 'pie',
 
                     colors: {
-                         data1: '#5969ff',
+                        data1: '#5969ff',
                         data2: '#ff407b'
 
 
@@ -286,7 +284,7 @@
                 },
                 pie: {
                     label: {
-                        format: function(value, ratio, id) {
+                        format: function (value, ratio, id) {
                             return d3.format('$')(value);
                         }
                     }
@@ -303,12 +301,18 @@
                         ['data2', 120],
                     ],
                     type: 'donut',
-                    onclick: function(d, i) { console.log("onclick", d, i); },
-                    onmouseover: function(d, i) { console.log("onmouseover", d, i); },
-                    onmouseout: function(d, i) { console.log("onmouseout", d, i); },
+                    onclick: function (d, i) {
+                        console.log("onclick", d, i);
+                    },
+                    onmouseover: function (d, i) {
+                        console.log("onmouseover", d, i);
+                    },
+                    onmouseout: function (d, i) {
+                        console.log("onmouseout", d, i);
+                    },
 
                     colors: {
-                         data1: '#5969ff',
+                        data1: '#5969ff',
                         data2: '#ff407b'
 
 
@@ -323,7 +327,7 @@
 
             });
 
-            setTimeout(function() {
+            setTimeout(function () {
                 chart.load({
                     columns: [
                         ["setosa", 0.2, 0.2, 0.2, 0.2, 0.2, 0.4, 0.3, 0.2, 0.2, 0.1, 0.2, 0.2, 0.1, 0.1, 0.2, 0.4, 0.4, 0.3, 0.3, 0.3, 0.2, 0.4, 0.2, 0.5, 0.2, 0.2, 0.4, 0.2, 0.2, 0.2, 0.2, 0.4, 0.1, 0.2, 0.2, 0.2, 0.2, 0.1, 0.2, 0.2, 0.3, 0.3, 0.2, 0.6, 0.4, 0.3, 0.2, 0.2, 0.2, 0.2],
@@ -333,7 +337,7 @@
                 });
             }, 1500);
 
-            setTimeout(function() {
+            setTimeout(function () {
                 chart.unload({
                     ids: 'data1'
                 });
@@ -352,11 +356,17 @@
 
                     ],
                     type: 'gauge',
-                    onclick: function(d, i) { console.log("onclick", d, i); },
-                    onmouseover: function(d, i) { console.log("onmouseover", d, i); },
-                    onmouseout: function(d, i) { console.log("onmouseout", d, i); },
+                    onclick: function (d, i) {
+                        console.log("onclick", d, i);
+                    },
+                    onmouseover: function (d, i) {
+                        console.log("onmouseover", d, i);
+                    },
+                    onmouseout: function (d, i) {
+                        console.log("onmouseout", d, i);
+                    },
                     colors: {
-                      data1: '#5969ff',
+                        data1: '#5969ff',
                         data2: '#ff407b',
                         data3: '#25d5f2',
                         data4: '#ffc750',
@@ -382,7 +392,6 @@
                     height: 320
                 }
             });
-
 
 
         }

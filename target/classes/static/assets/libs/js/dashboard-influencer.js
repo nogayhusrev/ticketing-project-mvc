@@ -1,4 +1,4 @@
-$(function() {
+$(function () {
     "use strict";
     // ============================================================== 
     // Gender Js
@@ -7,8 +7,8 @@ $(function() {
     Morris.Donut({
         element: 'gender_donut',
         data: [
-            { value: 60, label: 'Female' },
-            { value: 40, label: 'Male' }
+            {value: 60, label: 'Female'},
+            {value: 40, label: 'Male'}
 
         ],
 
@@ -20,8 +20,9 @@ $(function() {
         ],
 
 
-
-        formatter: function(x) { return x + "%" }
+        formatter: function (x) {
+            return x + "%"
+        }
     });
 
     // ============================================================== 
@@ -81,11 +82,9 @@ $(function() {
                 }]
 
 
-
             }
         }
     });
-
 
 
 });

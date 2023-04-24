@@ -1,7 +1,7 @@
-$(function() {
-    "use strict"; 
+$(function () {
+    "use strict";
 
-    $(document).ready(function() {
+    $(document).ready(function () {
 
         $('#calendar1').fullCalendar({
             header: {
@@ -14,9 +14,9 @@ $(function() {
             editable: true,
             eventLimit: true, // allow "more" link when too many events
             events: [{
-                    title: 'All Day Event',
-                    start: '2018-03-01',
-                },
+                title: 'All Day Event',
+                start: '2018-03-01',
+            },
                 {
                     title: 'Long Event',
                     start: '2018-03-07',
@@ -91,15 +91,15 @@ $(function() {
         });
 
     });
-  
-   
-    $(document).ready(function() {
+
+
+    $(document).ready(function () {
 
 
         /* initialize the external events
         -----------------------------------------------------------------*/
 
-        $('#external-events .fc-event').each(function() {
+        $('#external-events .fc-event').each(function () {
 
             // store data so the calendar knows to render an event upon drop
             $(this).data('event', {
@@ -128,7 +128,7 @@ $(function() {
             },
             editable: true,
             droppable: true, // this allows things to be dropped onto the calendar
-            drop: function() {
+            drop: function () {
                 // is the "remove after drop" checkbox checked?
                 if ($('#drop-remove').is(':checked')) {
                     // if so, remove the element from the "Draggable Events" list
@@ -141,4 +141,4 @@ $(function() {
     });
 
 
- });
+});
