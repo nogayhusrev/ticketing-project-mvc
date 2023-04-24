@@ -4,9 +4,9 @@ Author: jitu
 Email: chauhanjitu3@gmail.com
 File: js
 */
-$(function() {
+$(function () {
     "use strict";
-    
+
     // ============================================================== 
     // Revenue Cards
     // ============================================================== 
@@ -22,9 +22,8 @@ $(function() {
         maxSpotColor: undefined,
         highlightSpotColor: undefined,
         highlightLineColor: undefined,
-        resize:true
+        resize: true
     });
-
 
 
     $("#sparkline-revenue2").sparkline([3, 7, 6, 4, 5, 4, 3, 5, 5, 2, 3, 1], {
@@ -39,9 +38,8 @@ $(function() {
         maxSpotColor: undefined,
         highlightSpotColor: undefined,
         highlightLineColor: undefined,
-        resize:true
+        resize: true
     });
-
 
 
     $("#sparkline-revenue3").sparkline([5, 3, 4, 6, 5, 7, 9, 4, 3, 5, 6, 1], {
@@ -56,9 +54,8 @@ $(function() {
         maxSpotColor: undefined,
         highlightSpotColor: undefined,
         highlightLineColor: undefined,
-        resize:true
+        resize: true
     });
-
 
 
     $("#sparkline-revenue4").sparkline([6, 5, 3, 4, 2, 5, 3, 8, 6, 4, 5, 1], {
@@ -73,7 +70,7 @@ $(function() {
         maxSpotColor: undefined,
         highlightSpotColor: undefined,
         highlightLineColor: undefined,
-        resize:true,
+        resize: true,
     });
     // ============================================================== 
     // Chart Balance Bar
@@ -82,7 +79,7 @@ $(function() {
     var myChart = new Chart(ctx, {
         type: 'bar',
 
-        
+
         data: {
             labels: ["Current", "1-30", "31-60", "61-90", "91+"],
             datasets: [{
@@ -90,14 +87,14 @@ $(function() {
                 data: [500, 1000, 1500, 3700, 2500],
                 backgroundColor: "rgba(89, 105, 255,.8)",
                 borderColor: "rgba(89, 105, 255,1)",
-                borderWidth:2
+                borderWidth: 2
 
             }, {
                 label: 'Aged Receiables',
                 data: [1000, 1500, 2500, 3500, 2500],
                 backgroundColor: "rgba(255, 64, 123,.8)",
                 borderColor: "rgba(255, 64, 123,1)",
-                borderWidth:2
+                borderWidth: 2
 
 
             }]
@@ -105,110 +102,111 @@ $(function() {
         },
         options: {
             legend: {
-                    display: true,
+                display: true,
 
-                    position: 'bottom',
+                position: 'bottom',
 
-                    labels: {
-                        fontColor: '#71748d',
-                        fontFamily:'Circular Std Book',
-                        fontSize: 14,
-                    }
+                labels: {
+                    fontColor: '#71748d',
+                    fontFamily: 'Circular Std Book',
+                    fontSize: 14,
+                }
             },
 
-                scales: {
-                    xAxes: [{
-                ticks: {
-                    fontSize: 14,
-                     fontFamily:'Circular Std Book',
-                     fontColor: '#71748d',
-                }
-            }],
-            yAxes: [{
-                ticks: {
-                    fontSize: 14,
-                     fontFamily:'Circular Std Book',
-                     fontColor: '#71748d',
-                }
-            }]
-                }
-    }
+            scales: {
+                xAxes: [{
+                    ticks: {
+                        fontSize: 14,
+                        fontFamily: 'Circular Std Book',
+                        fontColor: '#71748d',
+                    }
+                }],
+                yAxes: [{
+                    ticks: {
+                        fontSize: 14,
+                        fontFamily: 'Circular Std Book',
+                        fontColor: '#71748d',
+                    }
+                }]
+            }
+        }
 
 
+    });
 
-});
- 
-    
+
     // ============================================================== 
     // Gross Profit Margin
     // ============================================================== 
-   Morris.Donut({
-                element: 'morris_gross',
+    Morris.Donut({
+        element: 'morris_gross',
 
-                data: [
-                    { value: 94, label: 'Budget' },
-                    { value: 15, label: '' }
-                   
-                ],
-             
-                labelColor: '#5969ff',
+        data: [
+            {value: 94, label: 'Budget'},
+            {value: 15, label: ''}
 
-                colors: [
-                    '#5969ff',
-                    '#a8b0ff'
-                   
-                ],
+        ],
 
-                formatter: function(x) { return x + "%" },
-                  resize: true
+        labelColor: '#5969ff',
 
-            });
+        colors: [
+            '#5969ff',
+            '#a8b0ff'
+
+        ],
+
+        formatter: function (x) {
+            return x + "%"
+        },
+        resize: true
+
+    });
 
     // ============================================================== 
     // Net Profit Margin
     // ============================================================== 
     Morris.Donut({
-                element: 'morris_profit',
+        element: 'morris_profit',
 
-                data: [
-                    { value: 93, label: 'Profit' },
-                    { value: 15, label: '' }
-                   
-                ],
-             
-                labelColor: '#ff407b',
+        data: [
+            {value: 93, label: 'Profit'},
+            {value: 15, label: ''}
 
+        ],
 
-                colors: [
-                    '#ff407b',
-                    '#ffd5e1'
-                   
-                ],
-
-                formatter: function(x) { return x + "%" },
-                  resize: true
-
-            });
+        labelColor: '#ff407b',
 
 
+        colors: [
+            '#ff407b',
+            '#ffd5e1'
+
+        ],
+
+        formatter: function (x) {
+            return x + "%"
+        },
+        resize: true
+
+    });
 
 
-    // ============================================================== 
+    // ==============================================================
     //EBIT Morris
     // ============================================================== 
 
     Morris.Bar({
         element: 'ebit_morris',
         data: [
-            { x: '2011 Q1', y: 20000 },
-            { x: '2011 Q2', y: 24000 },
-            { x: '2011 Q3', y: 33000 },
-            { x: '2011 Q4', y: 40000 },
-            { x: '2012 Q1', y: 25000 },
-            { x: '2012 Q2', y: 70000 },
-            { x: '2012 Q3', y: 52000 },
-            { x: '2012 Q4', y: 39000 },
-            { x: '2013 Q1', y: 80000 }
+            {x: '2011 Q1', y: 20000},
+            {x: '2011 Q2', y: 24000},
+            {x: '2011 Q3', y: 33000},
+            {x: '2011 Q4', y: 40000},
+            {x: '2012 Q1', y: 25000},
+            {x: '2012 Q2', y: 70000},
+            {x: '2012 Q3', y: 52000},
+            {x: '2012 Q4', y: 39000},
+            {x: '2013 Q1', y: 80000}
         ],
         xkey: 'x',
         ykeys: ['y'],
@@ -219,22 +217,19 @@ $(function() {
     });
 
 
-
-
-
-    // ============================================================== 
+    // ==============================================================
     //EBIT Morris
     // ============================================================== 
     var a = c3.generate({
         bindto: "#goodservice",
-        size: { height: 350 },
-        color: { pattern: ["#5969ff", "#ff407b"] },
+        size: {height: 350},
+        color: {pattern: ["#5969ff", "#ff407b"]},
         data: {
             columns: [
                 ["Service", 20000, 25000, 30000, 80000, 10000, 50000],
                 ["Average", 25000, 25000, 25000, 25000, 25000, 25000]
             ],
-            types: { Service: "bar" }
+            types: {Service: "bar"}
         },
         bar: {
 
@@ -242,8 +237,8 @@ $(function() {
 
         },
         legend: {
-  show: true
-},
+            show: true
+        },
         axis: {
             y: {
                 tick: {
@@ -256,8 +251,7 @@ $(function() {
     });
 
 
-
-    // ============================================================== 
+    // ==============================================================
     // Disputed vs Overdue Invoices
     // ============================================================== 
     var data = {
@@ -266,7 +260,7 @@ $(function() {
     };
 
     var options = {
-        labelInterpolationFnc: function(value) {
+        labelInterpolationFnc: function (value) {
             return value[0]
         }
     };
@@ -276,7 +270,7 @@ $(function() {
             chartPadding: 30,
             labelOffset: 100,
             labelDirection: 'explode',
-            labelInterpolationFnc: function(value) {
+            labelInterpolationFnc: function (value) {
                 return value;
             }
         }],
@@ -306,8 +300,8 @@ $(function() {
             right: 40
         },
         axisY: {
-            labelInterpolationFnc: function(value) {
-                return '$'+ (value / 1000);
+            labelInterpolationFnc: function (value) {
+                return '$' + (value / 1000);
             }
         },
 
@@ -315,43 +309,40 @@ $(function() {
     });
 
 
-
-    // ============================================================== 
+    // ==============================================================
     // Accounts Payable Age
     // ============================================================== 
 
     var chart = c3.generate({
         bindto: "#account",
-        color: { pattern: ["#5969ff", "#ff407b", "#25d5f2", "#ffc750"] },
+        color: {pattern: ["#5969ff", "#ff407b", "#25d5f2", "#ffc750"]},
         data: {
             // iris data from R
             columns: [
                 ['30 days', 120],
                 ['60 days', 70],
                 ['90 days', 50],
-                 ['90+ Days', 30],
+                ['90+ Days', 30],
 
             ],
             type: 'pie',
-            
+
         }
     });
 
-    setTimeout(function() {
-        chart.load({
-            
-        });
+    setTimeout(function () {
+        chart.load({});
     }, 1500);
 
-    setTimeout(function() {
-        chart.unload({
-            ids: 'data1'
-        });
-        chart.unload({
-            ids: 'data2'
-        });
-    }, 
-    2500
+    setTimeout(function () {
+            chart.unload({
+                ids: 'data1'
+            });
+            chart.unload({
+                ids: 'data2'
+            });
+        },
+        2500
     );
 
     // ============================================================== 
@@ -364,17 +355,16 @@ $(function() {
         behaveLikeLine: true,
 
 
-
         data: [
-            { x: '2010 Q1', y: 20000 },
-            { x: '2010 Q2', y: 24000 },
-            { x: '2010 Q3', y: 33000 },
-            { x: '2010 Q4', y: 40000 },
-            { x: '2011 Q1', y: 25000 },
-            { x: '2011 Q2', y: 70000 },
-            { x: '2011 Q3', y: 52000 },
-            { x: '2012 Q1', y: 39000 },
-            { x: '2012 Q2', y: 80000 }
+            {x: '2010 Q1', y: 20000},
+            {x: '2010 Q2', y: 24000},
+            {x: '2010 Q3', y: 33000},
+            {x: '2010 Q4', y: 40000},
+            {x: '2011 Q1', y: 25000},
+            {x: '2011 Q2', y: 70000},
+            {x: '2011 Q3', y: 52000},
+            {x: '2012 Q1', y: 39000},
+            {x: '2012 Q2', y: 80000}
         ],
         xkey: 'x',
         ykeys: ['y'],
@@ -383,9 +373,8 @@ $(function() {
         preUnits: ["$"]
 
 
-
     });
-   
+
     // ============================================================== 
     // Working Capital
     // ============================================================== 
@@ -399,19 +388,17 @@ $(function() {
     }, {
         stackBars: true,
         axisY: {
-            labelInterpolationFnc: function(value) {
-                return  '$' + (value / 1000);
+            labelInterpolationFnc: function (value) {
+                return '$' + (value / 1000);
             }
         }
-    }).on('draw', function(data) {
+    }).on('draw', function (data) {
         if (data.type === 'bar') {
             data.element.attr({
                 style: 'stroke-width: 30px'
             });
         }
     });
-
-
 
 
 });

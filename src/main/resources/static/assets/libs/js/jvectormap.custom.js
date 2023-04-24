@@ -1,4 +1,4 @@
-$(function() {
+$(function () {
     "use strict";
 
     jQuery('#world-map-markers').vectorMap({
@@ -37,7 +37,7 @@ $(function() {
         selectedColor: '#c9dfaf',
         selectedRegions: [],
         showTooltip: true,
-        onRegionClick: function(element, code, region) {
+        onRegionClick: function (element, code, region) {
             var message = 'You clicked "' +
                 region +
                 '" which has the code: ' +
@@ -70,7 +70,6 @@ $(function() {
             }
         }
     });
-
 
 
     $('#australia').vectorMap({

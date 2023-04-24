@@ -1,5 +1,4 @@
-
-$(function() {
+$(function () {
     "use strict";
     // ============================================================== 
     // Guage 1
@@ -35,7 +34,7 @@ $(function() {
     // ============================================================== 
 
 
-var opts = {
+    var opts = {
         angle: 0.35, // The span of the gauge arc
         lineWidth: 0.1, // The line thickness
         radiusScale: 1, // Relative radius
@@ -63,7 +62,7 @@ var opts = {
             subColor: '#666666'
         }
 
-    }; 
+    };
     var target = document.getElementById('gauge2'); // your canvas element
     var gauge = new Donut(target).setOptions(opts); // create sexy gauge!
     gauge.maxValue = 3000; // set max gauge value
@@ -72,13 +71,12 @@ var opts = {
     gauge.set(1675); // set actual value
 
 
-
-// ============================================================== 
+// ==============================================================
     // Guage 3
     // ============================================================== 
 
 
- var opts = {
+    var opts = {
         angle: -0.18, // The span of the gauge arc
         lineWidth: 0.2, // The line thickness
         radiusScale: 1, // Relative radius
@@ -106,11 +104,11 @@ var opts = {
             subColor: '#666666'
         },
         staticZones: [
-            { strokeStyle: "rgb(255,0,0)", min: 0, max: 500, height: 1.4 },
-            { strokeStyle: "rgb(200,100,0)", min: 500, max: 1000, height: 1.4 },
-            { strokeStyle: "rgb(150,150,0)", min: 1000, max: 1500, height: 1.4 },
-            { strokeStyle: "rgb(100,200,0)", min: 1500, max: 2000, height: 1.4 },
-            { strokeStyle: "rgb(0,255,0)", min: 2000, max: 3100, height: 1.4 }
+            {strokeStyle: "rgb(255,0,0)", min: 0, max: 500, height: 1.4},
+            {strokeStyle: "rgb(200,100,0)", min: 500, max: 1000, height: 1.4},
+            {strokeStyle: "rgb(150,150,0)", min: 1000, max: 1500, height: 1.4},
+            {strokeStyle: "rgb(100,200,0)", min: 1500, max: 2000, height: 1.4},
+            {strokeStyle: "rgb(0,255,0)", min: 2000, max: 3100, height: 1.4}
         ],
 
     };
@@ -122,21 +120,12 @@ var opts = {
     gauge.set(1250); // set actual value
 
 
-
-
-
-
-
-
-
-  // ============================================================== 
+    // ==============================================================
     // Guage 4
     // ============================================================== 
 
 
-
-
-var opts = {
+    var opts = {
         angle: 0.1, // The span of the gauge arc
         lineWidth: 0.3, // The line thickness
         radiusScale: 1, // Relative radius
@@ -164,11 +153,11 @@ var opts = {
             subColor: '#666666'
         },
         staticZones: [
-            { strokeStyle: "rgb(255,0,0)", min: 0, max: 500, height: 1.4 },
-            { strokeStyle: "rgb(200,100,0)", min: 500, max: 1000, height: 1.2 },
-            { strokeStyle: "rgb(150,150,0)", min: 1000, max: 1500, height: 1 },
-            { strokeStyle: "rgb(100,200,0)", min: 1500, max: 2000, height: 0.8 },
-            { strokeStyle: "rgb(0,255,0)", min: 2000, max: 3100, height: 0.6 }
+            {strokeStyle: "rgb(255,0,0)", min: 0, max: 500, height: 1.4},
+            {strokeStyle: "rgb(200,100,0)", min: 500, max: 1000, height: 1.2},
+            {strokeStyle: "rgb(150,150,0)", min: 1000, max: 1500, height: 1},
+            {strokeStyle: "rgb(100,200,0)", min: 1500, max: 2000, height: 0.8},
+            {strokeStyle: "rgb(0,255,0)", min: 2000, max: 3100, height: 0.6}
         ],
 
     };
@@ -180,20 +169,7 @@ var opts = {
     gauge.set(1600); // set actual value
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    });
+});
 
 
 
