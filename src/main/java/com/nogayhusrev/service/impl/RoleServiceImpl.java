@@ -6,8 +6,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
-public class RoleServiceImpl extends AbstractMapService<RoleDTO, Long> implements RoleService {
+@Service  //like @Component - creates bean
+public class RoleServiceImpl extends AbstractMapService<RoleDTO,Long> implements RoleService {
 
     @Override
     public RoleDTO save(RoleDTO role) {
