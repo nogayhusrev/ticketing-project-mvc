@@ -6,6 +6,7 @@ import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 
 @Component
+//@ConfigurationPropertiesBinding
 public class UserDtoConverter implements Converter<String, UserDTO> {
 
     UserService userService;
@@ -16,6 +17,13 @@ public class UserDtoConverter implements Converter<String, UserDTO> {
 
     @Override
     public UserDTO convert(String source) {
+
+        if (source == null || source.equals("")) {
+            return null;
+        }
+
         return userService.findById(source);
+
     }
+
 }
